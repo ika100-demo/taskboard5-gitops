@@ -59,6 +59,7 @@ components:
         memory: 512Mi
     instances:
       dev: {}
+      staging: {}
     expose:
       host: taskboard5-api
     replicas: 2  # tasks live in postgres, so instances share them (system spec 001, AC-001.9)
@@ -91,6 +92,7 @@ components:
         memory: 512Mi
     instances:
       dev: {}
+      staging: {}
     expose:
       host: taskboard5-web
 resources:
