@@ -105,3 +105,11 @@ resources:
       prod:
         replicas: 3
         storage: 20Gi
+        backup:  # daily base backup + WAL archive of the prod database to the backups bucket
+          to: backups
+          schedule: "0 3 * * *"
+          retention: 30d
+  backups:
+    type: bucket
+    storage: 10Gi
+    versioning: false
