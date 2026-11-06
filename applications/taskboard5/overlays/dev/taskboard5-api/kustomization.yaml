@@ -6,4 +6,4 @@ resources:
 - service.yaml
 images:
 - name: ghcr.io/ika100-demo/taskboard5-api
-  newTag: sha-ab90e4ab668608704d3f67273cd0ae3406935f3d
+  newTag: sha-9013abdf58d3c0efd96054211bec530beeb910c5
