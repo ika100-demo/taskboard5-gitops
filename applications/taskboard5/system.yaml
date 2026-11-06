@@ -55,3 +55,4 @@ components:
       dev: {}
     expose:
       host: taskboard5-api
+    replicas: 1  # exactly one until storage exists (taskboard5-api spec 001: tasks are held in memory)
