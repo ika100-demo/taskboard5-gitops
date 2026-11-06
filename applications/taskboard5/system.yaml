@@ -55,7 +55,9 @@ components:
       dev: {}
     expose:
       host: taskboard5-api
-    replicas: 1  # exactly one until storage exists (taskboard5-api spec 001: tasks are held in memory)
+    replicas: 2  # tasks live in postgres, so instances share them (system spec 001, AC-001.9)
+    uses:
+      - postgres
   taskboard5-web:
     type: website
     lang: typescript
@@ -72,6 +74,7 @@ components:
       next-cache: /app/.next/cache
     env:
       NODE_ENV: production
+      API_URL: http://taskboard5-api
     secretRefs: []
     resources:
       requests:
@@ -84,3 +87,13 @@ components:
       dev: {}
     expose:
       host: taskboard5-web
+resources:
+  postgres:
+    type: database
+    version: 17
+    replicas: 1
+    storage: 1Gi
+    instances:
+      prod:
+        replicas: 3
+        storage: 20Gi
