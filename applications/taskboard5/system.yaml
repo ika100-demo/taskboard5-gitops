@@ -55,7 +55,7 @@ components:
       dev: {}
     expose:
       host: taskboard5-api
-    replicas: 1  # exactly one until storage exists (taskboard5-api spec 001: tasks are held in memory)
+    replicas: 2  # tasks live in postgres, so instances share them (system spec 001, AC-001.9)
     uses:
       - postgres
   taskboard5-web:
