@@ -1,7 +1,7 @@
 ---
 spec_id: 001-persistent-tasks-and-web-task-board
 title: Persistent tasks and web task board
-status: approved
+status: done
 priority: P1
 shape: gitops-app
 ---
@@ -64,3 +64,5 @@ As a person tracking work, I want to add a task with a title and an optional due
 - 2026-11-06 created
 - 2026-11-06 amended: open questions answered; added AC-001.9 (2 Task API instances in dev share the tasks) and AC-001.10 (the web app calls the Task API from its server); backups and staging/prod rollout recorded under Non-goals.
 - 2026-11-06 approved
+- 2026-11-06 building
+- 2026-11-06 done
